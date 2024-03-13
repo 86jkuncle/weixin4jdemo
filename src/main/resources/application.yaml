@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3307/wx?useUnicode=true&characterEncoding=utf-8&useSSL=false&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+  thymeleaf:
+    cache: false
+weixin4j:
+  config:
+    appid: wx4762ede9bcb822a4
+    secret: 704fd16dbe9ca79a52c4afb78b02a997
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
