@@ -10,6 +10,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {url 'https://maven.youzanyun.com/repository/maven-public/'}
 }
 
 dependencies {
@@ -19,6 +20,11 @@ dependencies {
     implementation('com.github.liyiorg:weixin-popular:2.8.5')
     implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
     implementation('org.springframework.boot:spring-boot-starter-jdbc')
+    implementation('org.springframework.boot:spring-boot-starter-data-redis')
+    implementation('com.fasterxml.jackson.core:jackson-databind:2.11.4')
+    implementation('org.apache.commons:commons-pool2')
+    implementation('com.youzan.cloud:open-sdk-core:1.0.28-RELEASE')
+    implementation('com.youzan.cloud:open-sdk-gen:1.0.22.80701202109281055-RELEASE')
     implementation('mysql:mysql-connector-java:8.0.29')
     implementation('com.baomidou:mybatis-plus-boot-starter:3.5.1')
     testImplementation platform('org.junit:junit-bom:5.9.1')
