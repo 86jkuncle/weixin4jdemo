@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.UUID;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,9 @@ import org.weixin4j.util.SignUtil;
 public class WxController {
     private final WeixinTemplate weixinTemplate;
     private final WxUsersMapper wxUsersMapper;
+
+    @Value("${redirectUrl}")
+    private String redirectUrl;
     @Autowired
     public WxController(WeixinTemplate weixinTemplate,WxUsersMapper wxUsersMapper){
         this.weixinTemplate = weixinTemplate;
@@ -41,8 +45,7 @@ public class WxController {
         System.out.println(weixinTemplate.getAppId());
         model.addAttribute("appId", weixinTemplate.getAppId());
         //snsapi_base和snsapi_userinfo
-        String url =
-            "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4762ede9bcb822a4&redirect_uri=https://d405-110-53-241-253.ngrok-free.app/auth&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+        String url = weixinTemplate.sns().getOAuth2CodeBaseUrl(redirectUrl);
         response.sendRedirect(url);
     }
 

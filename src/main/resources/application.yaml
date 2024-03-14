@@ -31,3 +31,4 @@ youzan:
     grant-id: 有赞授权的店铺id
     client-id: 有赞创建的自用型无容器clientid
     client-secret: 有赞创建的自用型无容器clientsecret
+redirectUrl:  https://2e2a-110-53-241-253.ngrok-free.app/auth
